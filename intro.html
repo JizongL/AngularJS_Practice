@@ -1,8 +1,16 @@
 <!DOCTYPE html>
 <html>
     <!--AngularJS extends HTML with ng-directives-->
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">
+        
+    </script>
+    <script>
+        function typeDetails(letter){
+                let type = letter.getAttribute('data-letter-type');
+                alert(`The letter ${letter.innerHTML} is ${type}`);
+            }
+    </script>  
     <body>
         <div ng-app="">
             <p>
@@ -17,8 +25,15 @@
 
             <p ng-bind='name'></p>
         </div> 
-        
-        
 
+        <!--this block is to learn how the data* attribute works, with the function typeDetails()-->
+        <ul>
+            <li onclick="typeDetails(this)" id="A" data-letter-type="a">A</li>
+            <li onclick="typeDetails(this)" id="B" data-letter-type="b">B</li>
+            <li onclick="typeDetails(this)" id="C" data-letter-type="c">C</li>
+        </ul>
+        
+        
     </body>
+      
 </html>  
